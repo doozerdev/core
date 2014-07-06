@@ -1,0 +1,33 @@
+<h1><%= @item.title %></h1>
+
+<% if @item.children.any? %>
+  <ul>
+    <% @item.children.each do |item| %>
+    <li><%= link_to raw('<span class="glyphicon glyphicon-remove-sign"></span>'), item, method: :delete, :class=>'text-danger' %> <%= item.title %></li>
+  <% end %>
+  </ul>
+  <% else %>
+  No Items Create one below
+<% end %>
+
+<%= form_for @item, :url => create_item_path, :html => {:method => :post} do |f| %>
+<div class="form-group">
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.text_field :title, :placeholder=>'New Item (enter to add)', :value=>'', :autofocus => true, :class=>'form-control' %>
+  </div>
+  
+  <%= f.hidden_field :parent, :value => params[:id] %>
+</div>
+<% end %>
