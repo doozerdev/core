@@ -33,8 +33,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 #Mongo Gear
+#Actual mongo drive
 gem "mongo"
+#mongo wrapper to make mongo act like ActiveRecord
 gem "mongo_mapper"
+#speeds up bson operations by replacing bson with a driver written in C
 gem "bson_ext"
 
 # Use unicorn as the app server
