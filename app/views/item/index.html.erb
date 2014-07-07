@@ -3,9 +3,13 @@
 <%= link_to "New List", new_item_path %>
 
 <% if @items.count > 0 %>
-  <ul>
+  <ul class="list-group">
     <% @items.each do |item| %>
-    <li><%= link_to raw('<span class="glyphicon glyphicon-remove-sign"></span>'), item, method: :delete, data: { confirm: 'Are you sure? This will destroy all items in the list as well.' }, :class=>'text-danger' %> <%= link_to item.title, item_path(item._id) %></li>
+    <li class='list-group-item'>
+      <span class="badge"><%= pluralize(item.children.count, 'item') %></span>
+      <%= link_to raw('<span class="glyphicon glyphicon-remove-sign"></span>'), item, method: :delete, data: { confirm: 'Are you sure? This will destroy all items in the list as well.' }, :class=>'text-danger' %>
+      <%= link_to item.title, item %>
+      </li>
   <% end %>
   </ul>
 <% end %>
