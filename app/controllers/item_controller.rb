@@ -9,11 +9,17 @@ class ItemController < ApplicationController
     @items = Item.where(:parent=> nil)
     respond_to do |format|
       format.html
+      format.json
     end
   end
 
   #GET /lists/1
   def show
+    respond_to do |format|
+      format.html
+      format.json 
+        @json = { :item => @item, :children => @item.children }.to_json
+    end
   end
 
 
