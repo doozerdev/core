@@ -49,3 +49,10 @@ gem 'unicorn'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+end
+
