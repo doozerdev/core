@@ -328,9 +328,10 @@
 	"buffers":
 	[
 		{
+			"file": "config/application.rb",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 1283,
 				"line_ending": "Unix"
 			}
 		}
@@ -419,6 +420,13 @@
 	},
 	"file_history":
 	[
+		"/Users/jbasirico/github/Doozer/core/app/views/item/index.html.erb",
+		"/Users/jbasirico/github/Doozer/core/app/views/item/index.json.erb",
+		"/Users/jbasirico/github/Doozer/core/app/controllers/item_controller.rb",
+		"/Users/jbasirico/github/Doozer/core/app/views/item/show.json.erb",
+		"/Users/jbasirico/github/Doozer/core/app/views/item/show.html.erb",
+		"/Users/jbasirico/github/Doozer/core/.gitignore",
+		"/Users/jbasirico/github/Doozer/core/Gemfile",
 		"/Users/jbasirico/github/whetstone/app/views/project_reviews/_form.html.erb",
 		"/Users/jbasirico/github/whetstone/Gemfile",
 		"/Users/jbasirico/github/whetstone/app/controllers/project_reviews_controller.rb",
@@ -539,14 +547,7 @@
 		"/Users/jbasirico/github/whetstone/db/migrate/20131229182911_create_employee_reviews.rb",
 		"/Users/jbasirico/github/whetstone/db/migrate/20131229182851_create_project_reviews.rb",
 		"/Users/jbasirico/github/whetstone/db/migrate/20131229182835_create_projects.rb",
-		"/Users/jbasirico/github/whetstone/db/migrate/20131229182946_create_goals.rb",
-		"/Users/jbasirico/github/whetstone/db/migrate/20131229175849_create_users.rb",
-		"/Users/jbasirico/github/whetstone/db/migrate_old/20131224002222_create_project_reviews.rb",
-		"/Users/jbasirico/github/whetstone/db/migrate_old/20131227193715_devise_create_users.rb",
-		"/Users/jbasirico/github/whetstone/db/migrate/20131224002222_create_project_reviews.rb",
-		"/Users/jbasirico/Desktop/schema.rb",
-		"/Users/jbasirico/github/whetstone/db/migrate/20131229000731_add_users_ref_to_employee_reviews.rb",
-		"/Users/jbasirico/github/whetstone/db/migrate/20131228181459_add_employee_review_ref_to_users.rb"
+		"/Users/jbasirico/github/whetstone/db/migrate/20131229182946_create_goals.rb"
 	],
 	"find":
 	{
@@ -796,23 +797,26 @@
 			[
 				{
 					"buffer": 0,
-					"semi_transient": false,
+					"file": "config/application.rb",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1283,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								539,
+								539
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

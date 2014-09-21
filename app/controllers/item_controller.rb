@@ -6,7 +6,7 @@ class ItemController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.where(:parent=> nil)
+    @items = Item.where(:parent=> nil, :user_id => current_user.id)
     respond_to do |format|
       format.html
       format.json
@@ -33,13 +33,14 @@ class ItemController < ApplicationController
 
   def create
     @item = Item.new(params.require(:item).permit(:title, :parent))
+    @item.user_id = current_user.id
     respond_to do |format|
       if @item.save
         if @item.parent
           #redirect to parent list
           format.html { redirect_to Item.find(@item.parent), notice: 'Item was successfully created.' }
         else
-          format.html { redirect_to items_path, notice: 'Item was successfully created.' }
+          format.html { redirect_to items_path, notice: "Item was successfully created. #{@item.user_id}" }
         end
       else
         format.html { render action: "new" }

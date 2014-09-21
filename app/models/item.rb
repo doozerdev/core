@@ -6,6 +6,7 @@ class Item
   key :parent, String
   key :order, Float
   key :duedate, DateTime
+  key :user_id, String
 
   def children
     Item.where(:parent => id.to_s).all

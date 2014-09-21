@@ -27,7 +27,14 @@
               <li><%= link_to "Home", root_path %></li>
               <li><%= link_to "All Lists", items_path %></li>
               <li><%= link_to "New List", new_item_path %></li>
-
+              <li>
+                <% if current_user %>
+                  Welcome <strong><%= current_user.name %></strong> (<%= current_user.id %>)!
+                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                <% else %>
+                  <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+                <% end %>
+              </li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

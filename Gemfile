@@ -10,6 +10,18 @@ gem 'sass-rails', '~> 4.0.3'
 #Bootstrap for styling
 gem 'bootstrap-sass', '~> 3.2.0'
 
+#Facebook Authentication
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+
+#Mongo Gear
+#Actual mongo drive
+gem "mongo"
+#mongo wrapper to make mongo act like ActiveRecord
+gem "mongo_mapper"
+#speeds up bson operations by replacing bson with a driver written in C
+gem "bson_ext"
+
 #Add browser vendor prefixes automatically
 gem 'autoprefixer-rails'
 
@@ -31,14 +43,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
-
-#Mongo Gear
-#Actual mongo drive
-gem "mongo"
-#mongo wrapper to make mongo act like ActiveRecord
-gem "mongo_mapper"
-#speeds up bson operations by replacing bson with a driver written in C
-gem "bson_ext"
 
 # Use unicorn as the app server
 gem 'unicorn'
