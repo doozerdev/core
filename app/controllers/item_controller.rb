@@ -3,10 +3,12 @@ class ItemController < ApplicationController
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :check_authN
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :check_authZ, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.where(:parent=> nil, :user_id => current_user.id)
+    @items = Item.where(:user_id => current_user.id.to_s)
     respond_to do |format|
       format.html
       format.json
@@ -15,11 +17,11 @@ class ItemController < ApplicationController
 
   #GET /lists/1
   def show
-    respond_to do |format|
-      format.html
-      format.json 
-        @json = { :item => @item, :children => @item.children }.to_json
-    end
+      respond_to do |format|
+        format.html
+        format.json 
+          @json = { :item => @item, :children => @item.children }.to_json
+      end
   end
 
 
@@ -55,12 +57,22 @@ class ItemController < ApplicationController
     
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to  :back, notice: 'Item was successfully deleted.' }
+      format.html { redirect_to :back, notice: 'Item was successfully deleted.' }
     end
   end
 
   private
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def check_authN
+      redirect_to root_path, notice: 'Please login first' unless current_user
+  end
+
+  def check_authZ
+    if @item
+      redirect_to root_path, notice: 'You are not authorized to do that' unless @item.user_id == current_user.id.to_s
+    end
   end
 end

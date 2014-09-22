@@ -1,11 +1,13 @@
 <h1><%= @item.title %></h1>
 
+
 <% if @item.children.any? %>
   <ul class="list-group">
     <% @item.children.each do |item| %>
     <li class="list-group-item">
-      <%= link_to raw('<span class="glyphicon glyphicon-remove-sign"></span>'), item, method: :delete, :class=>'text-danger' %>
-      <%= item.title %></li>
+      <%= link_to raw('<span class="glyphicon glyphicon-remove-sign pull-right"></span>'), item, method: :delete, :class=>'text-danger' %>
+      <%= item.title %>
+    </li>
   <% end %>
   </ul>
   <% else %>
