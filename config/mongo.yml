@@ -12,13 +12,8 @@ development:
   database: mongo_test_development
 
 test:
-  <<: *defaults
-  database: mongo_test_test
-  w: 0
+uri: <%= ENV['MONGOHQ_URL'] %>
 
 # set these environment variables on your prod server
 production:
-  <<: *defaults
-  database: mongo_test
-  username: <%= ENV['MONGO_USERNAME'] %>
-  password: <%= ENV['MONGO_PASSWORD'] %>
+  uri: <%= ENV['MONGOHQ_URL'] %>
