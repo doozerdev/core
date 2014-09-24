@@ -12,7 +12,7 @@ development:
   database: mongo_test_development
 
 test:
-uri: <%= ENV['MONGOHQ_URL'] %>
+  uri: <%= ENV['MONGOHQ_URL'] %>
 
 # set these environment variables on your prod server
 production:
