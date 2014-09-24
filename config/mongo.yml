@@ -1,6 +1,6 @@
 defaults: &defaults
   host: 127.0.0.1
-  port: 123456
+  port: 27017
   options:
     w: 1
     pool_size: 1
@@ -9,15 +9,11 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  port: 9999
   database: mongo_test_development
 
 test:
-  <<: *defaults
-  port: 1001
-  database: mongo_test_test
-  w: 0
+uri: <%= ENV['MONGOHQ_URL'] %>
 
 # set these environment variables on your prod server
 production:
-  uri: <%= ENV['MONGODB_URI'] %>
+  uri: <%= ENV['MONGOHQ_URL'] %>
