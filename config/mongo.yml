@@ -12,12 +12,10 @@ development:
   database: mongo_test_development
 
 test:
-  <<: *defaults
-  database: mongo_test_test
-  w: 0
+  uri: <%= ENV['MONGOHQ_URL'] %>
+  database: mongo_test
 
 # set these environment variables on your prod server
 production:
-  port:
   uri: <%= ENV['MONGOHQ_URL'] %>
   database: mongo_test
