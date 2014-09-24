@@ -20,8 +20,4 @@ test:
 
 # set these environment variables on your prod server
 production:
-  port: 1337
-  uri: <%= ENV['MONGOHQ_URL'] %>
-  database: mongo_test
-  username: <%= ENV['MONGO_USERNAME'] %>
-  password: <%= ENV['MONGO_PASSWORD'] %>
+  uri: <%= ENV['MONGODB_URI'] %>
