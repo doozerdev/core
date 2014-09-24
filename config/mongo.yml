@@ -21,9 +21,3 @@ test:
 # set these environment variables on your prod server
 production:
   uri: <%= ENV['MONGOHQ_URL'] %>
-  database: mongo_test
-  options:
-    w: 1
-    pool_size: 1
-    slave_ok: false
-    ssl: false
