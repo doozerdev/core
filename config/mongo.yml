@@ -1,18 +1,24 @@
-# defaults: &defaults
-#   host: 127.0.0.1
-#   port: 27017
-#   options:
-#     w: 1
-#     pool_size: 1
-#     slave_ok: false
-#     ssl: false
+defaults: &defaults
+  host: 127.0.0.1
+  port: 27017
+  options:
+    w: 1
+    pool_size: 1
+    slave_ok: false
+    ssl: false
 
 development:
-  uri: <%= ENV['MONGOHQ_URL'] %>
+  <<: *defaults
+  database: mongo_test_development
 
 test:
-  uri: <%= ENV['MONGOHQ_URL'] %>
+  <<: *defaults
+  database: mongo_test_test
+  w: 0
 
 # set these environment variables on your prod server
 production:
-  uri: <%= ENV['MONGOHQ_URL'] %>
+  <<: *defaults
+  database: mongo_test
+  username: <%= ENV['MONGO_USERNAME'] %>
+  password: <%= ENV['MONGO_PASSWORD'] %>
