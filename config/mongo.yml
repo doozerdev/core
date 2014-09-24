@@ -9,6 +9,7 @@ defaults: &defaults
 
 development:
   <<: *defaults
+  port: 9999
   database: mongo_test_development
 
 test:
