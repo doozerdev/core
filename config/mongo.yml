@@ -20,5 +20,3 @@ test:
 production:
   uri: <%= ENV['MONGOHQ_URL'] %>
   database: mongo_test
-  username: <%= ENV['MONGO_USERNAME'] %>
-  password: <%= ENV['MONGO_PASSWORD'] %>
