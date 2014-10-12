@@ -26,3 +26,5 @@ config/secrets.yml
 .rvmrc
 
 log/development.log
+
+.doozer_rc

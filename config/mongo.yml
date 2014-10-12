@@ -19,9 +19,9 @@ test:
   use_env_var: true
   #keep the following line in if you're using the env_var, I'm not sure why it's needed, 
   #but it breaks if I take it out, TODO: investigate this
-  uri: <%= ENV['MONGO_URL'] %>
+  uri: <%= ENV['MONGOHQ_URL'] %>
   
 # set these environment variables on your prod server
 production:
   use_env_var: true
-  uri: <%= ENV['MONGO_URL'] %>
+  uri: <%= ENV['MONGOHQ_URL'] %>

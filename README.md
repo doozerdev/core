@@ -23,7 +23,7 @@ In the config/mongo.yml file comment out the following lines.
 
 Uncomment or add the following lines (you need both)
 
-    uri: <%= ENV['MONGO_URL'] %>
+    uri: <%= ENV['MONGOHQ_URL'] %>
     use_env_var: true
 
 ##Run
