@@ -8,7 +8,7 @@ class ItemController < ApplicationController
   before_action :check_authZ, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.where(:user_id => current_user.id.to_s)
+    @items = Item.where(:user_id => current_user.id.to_s, :parent => nil)
     respond_to do |format|
       format.html
       format.json
