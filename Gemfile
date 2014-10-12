@@ -14,6 +14,8 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 
+gem 'rails_12factor', group: :production
+
 #Mongo Gear
 #Actual mongo drive
 gem "mongo"
