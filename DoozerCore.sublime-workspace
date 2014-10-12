@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"user",
+				"current_user"
+			],
+			[
+				"redirect",
+				"redirect_to"
+			],
+			[
 				"employ",
 				"employee_closed"
 			],
@@ -46,10 +54,6 @@
 			[
 				"cu",
 				"current_user"
-			],
-			[
-				"user",
-				"user_id"
 			],
 			[
 				"form",
@@ -328,10 +332,10 @@
 	"buffers":
 	[
 		{
-			"file": "config/application.rb",
+			"file": "app/models/user.rb",
 			"settings":
 			{
-				"buffer_size": 1283,
+				"buffer_size": 509,
 				"line_ending": "Unix"
 			}
 		}
@@ -418,15 +422,43 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/jbasirico/github/Doozer/core",
+		"/Users/jbasirico/github/Doozer/core/app",
+		"/Users/jbasirico/github/Doozer/core/app/assets",
+		"/Users/jbasirico/github/Doozer/core/app/assets/javascripts",
+		"/Users/jbasirico/github/Doozer/core/app/controllers",
+		"/Users/jbasirico/github/Doozer/core/app/models",
+		"/Users/jbasirico/github/Doozer/core/config",
+		"/Users/jbasirico/github/Doozer/core/config/initializers",
+		"/Users/jbasirico/github/Doozer/core/tmp"
+	],
 	"file_history":
 	[
+		"/Users/jbasirico/github/Doozer/core/config/mongo.yml",
+		"/Users/jbasirico/github/Doozer/core/config/initializers/mongo.rb",
+		"/Users/jbasirico/github/Doozer/core/app/controllers/item_controller.rb",
+		"/Users/jbasirico/github/Doozer/core/app/views/layouts/application.html.erb",
+		"/Users/jbasirico/github/Doozer/core/app/views/item/show.html.erb",
+		"/Users/jbasirico/github/Doozer/core/config/mongoid.yml",
+		"/Users/jbasirico/github/Doozer/core/app/models/item.rb",
+		"/Users/jbasirico/github/Doozer/core/app/views/welcome/index.html.erb",
+		"/Users/jbasirico/github/Doozer/core/config/initializers/omniauth.rb",
+		"/Users/jbasirico/github/Doozer/core/app/controllers/sessions_controller.rb",
+		"/Users/jbasirico/github/Doozer/core/app/models/user.rb",
+		"/Users/jbasirico/github/Doozer/core/Gemfile",
+		"/Users/jbasirico/github/Doozer/core/app/assets/javascripts/facebook.js.coffee",
+		"/Users/jbasirico/github/Doozer/core/app/assets/javascripts/application.js",
+		"/Users/jbasirico/github/Doozer/core/app/controllers/application_controller.rb",
+		"/Users/jbasirico/github/Doozer/core/app/controllers/sessions.rb",
+		"/Users/jbasirico/github/Doozer/core/config/routes.rb",
+		"/Users/jbasirico/Desktop/leghdajzaaqhztbq",
+		"/Users/jbasirico/Desktop/5000000 Gmail.txt",
 		"/Users/jbasirico/github/Doozer/core/app/views/item/index.html.erb",
 		"/Users/jbasirico/github/Doozer/core/app/views/item/index.json.erb",
-		"/Users/jbasirico/github/Doozer/core/app/controllers/item_controller.rb",
 		"/Users/jbasirico/github/Doozer/core/app/views/item/show.json.erb",
-		"/Users/jbasirico/github/Doozer/core/app/views/item/show.html.erb",
 		"/Users/jbasirico/github/Doozer/core/.gitignore",
-		"/Users/jbasirico/github/Doozer/core/Gemfile",
 		"/Users/jbasirico/github/whetstone/app/views/project_reviews/_form.html.erb",
 		"/Users/jbasirico/github/whetstone/Gemfile",
 		"/Users/jbasirico/github/whetstone/app/controllers/project_reviews_controller.rb",
@@ -531,27 +563,11 @@
 		"/Users/jbasirico/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/jbasirico/github/whetstone/app/assets/stylesheets/theme.min.css",
 		"/Users/jbasirico/github/whetstone/db/migrate/20131230061523_add_engagement_ref_to_project_reviews.rb",
-		"/Users/jbasirico/github/whetstone/db/schema.rb",
-		"/Users/jbasirico/github/whetstone/app/controllers/projects_controller.rb",
-		"/Users/jbasirico/github/whetstone/app/views/projects/_form.html.erb",
-		"/Users/jbasirico/github/whetstone/app/views/projects/new.html.erb",
-		"/Users/jbasirico/github/whetstone/app/models/project.rb",
-		"/Users/jbasirico/github/whetstone/test/controllers/projects_controller_test.rb",
-		"/Users/jbasirico/github/whetstone/app/views/devise/shared/_links.erb",
-		"/Users/jbasirico/github/whetstone/README.md",
-		"/Users/jbasirico/github/whetstone/app/views/projects/index.html.erb",
-		"/Users/jbasirico/github/whetstone/app/views/projects/index.json.jbuilder",
-		"/Users/jbasirico/github/whetstone/app/views/projects/show.html.erb",
-		"/Users/jbasirico/github/whetstone/app/views/projects/show.json.jbuilder",
-		"/Users/jbasirico/github/whetstone/db/migrate/20131229175849_devise_create_users.rb",
-		"/Users/jbasirico/github/whetstone/db/migrate/20131229182911_create_employee_reviews.rb",
-		"/Users/jbasirico/github/whetstone/db/migrate/20131229182851_create_project_reviews.rb",
-		"/Users/jbasirico/github/whetstone/db/migrate/20131229182835_create_projects.rb",
-		"/Users/jbasirico/github/whetstone/db/migrate/20131229182946_create_goals.rb"
+		"/Users/jbasirico/github/whetstone/db/schema.rb"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -566,6 +582,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"27017",
 			"employee_review_template",
 			" goal",
 			"png",
@@ -692,8 +709,7 @@
 			"e.",
 			"@user.best_or_current_",
 			"@user",
-			"images/SSB_arch/",
-			"requirements_path"
+			"images/SSB_arch/"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -797,19 +813,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "config/application.rb",
+					"file": "app/models/user.rb",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1283,
+						"buffer_size": 509,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								539,
-								539
+								509,
+								509
 							]
 						],
 						"settings":
@@ -897,6 +913,7 @@
 		],
 		"width": 392.0
 	},
+	"selected_group": 0,
 	"settings":
 	{
 	},
