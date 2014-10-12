@@ -29,7 +29,7 @@
               <li><%= link_to "New List", new_item_path %></li>
                 <% if current_user %>
                 <li>
-                  <%= link_to "#{current_user.id} - Sign out", signout_path, id: "sign_out" %>
+                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
                 </li>
                 <% else %>
                 <li>
