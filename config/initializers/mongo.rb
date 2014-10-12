@@ -1,7 +1,7 @@
 config = YAML.load_file(Rails.root + 'config' + 'mongo.yml')[Rails.env]
 
 if config['use_env_var']
-  db = URI.parse(ENV['MONGO_URL'])
+  db = URI.parse(ENV['MONGOHQ_URL'])
   db_name = db.path.gsub(/^\//, '')
   db_connection = Mongo::Connection.new(db.host, db.port).db(db_name)
   db_connection.authenticate(db.user, db.password) unless (db.user.nil? || db.password.nil?)
