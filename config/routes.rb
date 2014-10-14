@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'items/:id' => 'item#show', as: :item
   post 'items' => 'item#create', as: :create_item
   delete 'items/:id' => 'item#destroy', as: :destroy_item
+  post 'items/:id/toggle' => 'item#toggle', as: :toggle_item
 
   #Authentication Routes
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]

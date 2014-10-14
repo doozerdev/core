@@ -4,7 +4,7 @@ class ItemController < ApplicationController
   protect_from_forgery with: :exception
 
   before_action :check_authN
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :update, :toggle, :edit, :update, :destroy]
   before_action :check_authZ, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -24,6 +24,32 @@ class ItemController < ApplicationController
       end
   end
 
+
+  def toggle
+    respond_to do |format|
+      @item.done = params[:done] == 'true'
+      if @item.save
+        format.html { redirect_to(@item.parent, :notice => 'Item saved.') }
+        format.js
+      else
+        format.html { render :action => "new" }
+        format.js
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      @item.done = params[item.id.to_s] == 'true'
+      if @item.save
+        format.html { redirect_to(@item, :notice => 'Item saved.') }
+        format.js
+      else
+        format.html { render :action => "new" }
+        format.js
+      end
+    end
+  end
 
   # new.html.erb
   def new

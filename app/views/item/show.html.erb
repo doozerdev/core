@@ -5,8 +5,10 @@
   <ul class="list-group">
     <% @item.children.each do |item| %>
     <li class="list-group-item">
-      <%= link_to raw('<span class="glyphicon glyphicon-remove-sign pull-right"></span>'), item, method: :delete, :class=>'text-danger' %>
-      <%= item.title %>
+        <%= link_to raw('<span class="glyphicon glyphicon-remove-sign pull-right"></span>'), item,  method: :delete, :class=>'text-danger' %>
+
+        <%= check_box_tag 'done', item.id , item.done, :class => "item-check" %>
+        <%= content_tag :span, item.title %>
     </li>
   <% end %>
   </ul>
