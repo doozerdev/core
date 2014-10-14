@@ -8,13 +8,20 @@ I believe everything will be installed with `bundle install` including mongo
 
 ##Mongo Install
 
+`source .doozer_rc` from the root directory to load the MONGO_DB environment var
+
+If you want this to happen every time, move the .doozer_rc file to your home directory and add the following line to your .bashrc or .bash_profile
+
+    if [ -f ~/.doozer_rc ]; then . ~/.doozer_rc; fi
+
+This will load three values into your environment: `MONGOHQ_URL`, `FB_APP_ID`, `FB_APP_SECRET`. You don't need the first one to run locally, but you'll need the second two to authenticate to Facebook. 
+
 ###Local Mongo
 If you want to run a local mongo instance (I suggest this for all dev work)
 
 run monogodb by creating /data/db in your root dir and running `mongod`
 
 ###Compose (hosted Mongo)
-`source .doozer_rc` from the root directory to load the MONGO_DB environment var
 
 In the config/mongo.yml file comment out the following lines.
 
