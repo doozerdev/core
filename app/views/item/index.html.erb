@@ -6,9 +6,8 @@
   <ul class="list-group">
     <% @items.each do |item| %>
     <li class='list-group-item'>
-      <span class="badge"><%= pluralize(item.children.count, 'item') %></span>
-      <%= link_to raw('<span class="glyphicon glyphicon-remove-sign"></span>'), item, method: :delete, data: { confirm: 'Are you sure? This will destroy all items in the list as well.' }, :class=>'text-danger' %>
-      <%= link_to item.title, item %>
+      <%= link_to raw('<span class="glyphicon glyphicon-remove-sign pull-right"></span>'), item, method: :delete, data: { confirm: 'Are you sure? This will destroy all items in the list as well.' }, :class=>'text-danger' %>
+      <%= link_to "#{item.title} - #{pluralize(item.children.count, 'item')}", item %>
       </li>
   <% end %>
   </ul>
