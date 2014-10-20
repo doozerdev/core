@@ -21,7 +21,7 @@
         <% end %>
 
         <%= check_box_tag 'done', item.id , item.done, :class => "item-check" %>
-        <%= pretty_id %>.) <strong><%= content_tag :span, item.title %></strong> (Calculated Order: <%= content_tag :span, item.order %>)
+        <%= pretty_id %>.) <strong><%= content_tag :span, item.title %></strong> (CO: <%= content_tag :span, item.order %>)
 
     </li>
     <% pretty_id += 1 %>
