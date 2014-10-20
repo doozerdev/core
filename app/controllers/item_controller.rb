@@ -68,15 +68,19 @@ class ItemController < ApplicationController
     @item = Item.new(params.require(:item).permit(:title, :parent))
     @item.user_id = current_user.id
     respond_to do |format|
-      if Item.find(@item.parent).insert_tail(@item)
-        if @item.parent
+      if @item.parent
+        if Item.find(@item.parent).insert_tail(@item)
           #redirect to parent list
           format.html { redirect_to Item.find(@item.parent), notice: 'Item was successfully created.' }
         else
-          format.html { redirect_to items_path, notice: "Item was successfully created. #{@item.user_id}" }
+          format.html { render action: "new" }
         end
       else
-        format.html { render action: "new" }
+        if @item.save
+          format.html { redirect_to items_path, notice: "List was successfully created." }
+        else
+          format.html { render action: "new" }
+        end
       end
     end
   end
