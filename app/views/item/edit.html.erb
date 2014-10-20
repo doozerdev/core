@@ -1,0 +1,9 @@
+<h1><%= f.text_field :title, :value=>@item.title, :autofocus => true, :class=>'form-control' %></h1>
+
+  <div class="form-group">
+    <%= f.datetime_local_field :duedate, :value=>@item.duedate, :autofocus => true, :class=>'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.text_field :notes, :placeholder=>'Add notes here', :value=>@item.notes, :autofocus => true, :class=>'form-control' %>
+  </div>
