@@ -1,15 +1,30 @@
 <h1><%= @item.title %></h1>
 
+<div class='results'></div>
 
 <% if @item.children.any? %>
   <ul class="list-group">
+    <% pretty_id = 1 %>
     <% @item.children.each do |item| %>
+
     <li class="list-group-item">
         <%= link_to raw('<span class="glyphicon glyphicon-remove-sign pull-right"></span>'), item,  method: :delete, :class=>'text-danger' %>
+        <%if pretty_id == 1%>
+          <span class="glyphicon glyphicon glyphicon-chevron-up pull-right text-muted">&nbsp;</span>
+        <% else %>
+        <%= link_to raw('<span class="glyphicon glyphicon glyphicon-chevron-up pull-right">&nbsp;</span>'), move_item_up_path(item) %> 
+        <% end %>
+        <%if pretty_id == @item.children.count %>
+          <span class="glyphicon glyphicon glyphicon-chevron-down pull-right text-muted">&nbsp;</span>
+        <% else %>
+        <%= link_to raw('<span class="glyphicon glyphicon glyphicon-chevron-down pull-right">&nbsp;</span>'), move_item_down_path(item) %>
+        <% end %>
 
         <%= check_box_tag 'done', item.id , item.done, :class => "item-check" %>
-        <%= content_tag :span, item.title %>
+        <%= pretty_id %>.) <strong><%= content_tag :span, item.title %></strong> (Calculated Order: <%= content_tag :span, item.order %>)
+
     </li>
+    <% pretty_id += 1 %>
   <% end %>
   </ul>
   <% else %>

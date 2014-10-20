@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   post 'items' => 'item#create', as: :create_item
   delete 'items/:id' => 'item#destroy', as: :destroy_item
   post 'items/:id/toggle' => 'item#toggle', as: :toggle_item
+  get 'items/:id/edit' => 'item#show', as: :edit_item
+  patch 'items/:id/edit' => 'item#show', as: :save_item
+  get 'items/:id/up' => 'item#move_up', as: :move_item_up
+  get 'items/:id/down' => 'item#move_down', as: :move_item_down
 
   #Authentication Routes
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
