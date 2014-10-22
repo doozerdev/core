@@ -1,8 +1,11 @@
 class Item
   include MongoMapper::Document
 
-  @@increment = 1024
-  #Ruby automatically converts integers to a large integer class when they overflow, so there's (practically) no limit to how big they can be. We'll define a max here so we don't run into issues with Swift
+  # 33554432 is the closest power of two to intMax/30, We're assuming most lists are 30 items or fewer, so using this
+  # number reduces the number of resorts we have to make, which require writing to every item in the list.
+  @@increment = 33554432 
+  #Ruby automatically converts integers to a large integer class when they overflow, so there's (practically) no limit
+  # to how big they can be. We'll define a max here so we don't run into issues with Swift
   @@intMax = 2147483647 
 
   key :title, String
