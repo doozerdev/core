@@ -16,6 +16,9 @@ gem 'omniauth-facebook', '1.4.0'
 
 gem 'rails_12factor', group: :production
 
+gem 'newrelic_rpm'
+
+
 #Mongo Gear
 #Actual mongo drive
 gem "mongo"
