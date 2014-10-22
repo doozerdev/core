@@ -53,9 +53,9 @@ class Item
         item.order = (np2.order-np1.order)/2 + np1.order
         item.save
       else
-        item.order = np2.order - 1
-        reorder_list
+        item.order = np1.order + 1
         item.save
+        reorder_list
       end
 
     else
@@ -72,9 +72,9 @@ class Item
         item.order = (nm1.order-nm2.order)/2 + nm2.order
         item.save
       else
-        item.order = nm1.order + 1
-        reorder_list
+        item.order = nm1.order - 1
         item.save
+        reorder_list
       end
     else
       insert_head(item)
