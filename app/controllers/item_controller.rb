@@ -71,13 +71,13 @@ class ItemController < ApplicationController
       if @item.parent
         if Item.find(@item.parent).insert_tail(@item)
           #redirect to parent list
-          format.html { redirect_to Item.find(@item.parent), notice: 'Item was successfully created.' }
+          format.html { redirect_to Item.find(@item.parent)}
         else
-          format.html { render action: "new" }
+          format.html { render action: "new", notice: 'There was a problem creating the item, please try again.' }
         end
       else
         if @item.save
-          format.html { redirect_to items_path, notice: "List was successfully created." }
+          format.html { redirect_to @item, notice: "List was successfully created, start adding items!" }
         else
           format.html { render action: "new" }
         end
@@ -94,7 +94,7 @@ class ItemController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to Item.find(@item.parent), notice: 'Item was successfully moved.' }
+      format.html { redirect_to Item.find(@item.parent)}
     end
   end
 
@@ -107,7 +107,7 @@ class ItemController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to Item.find(@item.parent), notice: 'Item was successfully moved.' }
+      format.html { redirect_to Item.find(@item.parent)}
     end
   end
 
@@ -115,10 +115,11 @@ class ItemController < ApplicationController
     @item.children.each do |child|
       child.destroy
     end
-    
+    parent = Item.find(@item.parent)
     @item.destroy
+
     respond_to do |format|
-      format.html { redirect_to :back, notice: 'Item was successfully deleted.' }
+      format.html { redirect_to parent }
     end
   end
 

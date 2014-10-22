@@ -1,6 +1,10 @@
-<h1>New List</h1>
-
 <%= form_for(@item) do |f| %>
+
+<h1>
+    <%= f.text_field :title, :placeholder=>'New List Name', :autofocus => true, :class=>'form-control input-lg' %>
+</h1>
+
+
 <div class="form-group">
   <% if @item.errors.any? %>
     <div id="error_explanation">
@@ -14,9 +18,7 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.text_field :title, :placeholder=>'List Name', :autofocus => true, :class=>'form-control' %>
-  </div>
+  
   
   <div class="actions">
     <%= f.submit :class =>'btn btn-default', :value=>'Create List' %>
