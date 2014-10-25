@@ -118,8 +118,13 @@ class ItemController < ApplicationController
     parent = Item.find(@item.parent)
     @item.destroy
 
+
     respond_to do |format|
-      format.html { redirect_to parent }
+      if @item.parent
+        format.html  { redirect_to parent }
+      else
+        format.html  { redirect_to :back }
+      end
     end
   end
 
