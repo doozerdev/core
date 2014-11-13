@@ -17,5 +17,4 @@
 // https://stackoverflow.com/questions/14797935/using-angularjs-with-turbolinks
 //= require angular/angular
 //= require_tree .
-//= require bootstrap-sprockets
 

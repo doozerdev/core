@@ -1,0 +1,2 @@
+doozer = angular.module('doozer',[
+])
