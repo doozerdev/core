@@ -14,8 +14,10 @@
  *= require_self
  */
 
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
+//move these references to the bower-managed stylesheets
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+
 
 #wrap > .container {
   padding: 60px 15px 0;

@@ -18,6 +18,8 @@ gem 'rails_12factor', group: :production
 
 gem 'newrelic_rpm'
 
+#front end package manager
+gem 'bower-rails'
 
 #Mongo Gear
 #Actual mongo drive
